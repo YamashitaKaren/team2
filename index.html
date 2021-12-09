@@ -37,79 +37,22 @@
 
 <body>
 <header id="header">
-    <p class="header"><img class="header" src="./logo_menu.png">Questa</p>
+  <a href="./index.html"><p class="header"><img class="header" src="./logo_menu.png">Questa</p></a>
 </header>
-<div class="bottom_right" data-toggle="modal" data-target="#testQModal">
+<div class="bottom_right" data-toggle="modal" data-target="#testQModal" style="display: none;">
   <span></span>
   <span></span>
   <a class="block-baloon-right"></a>
 </div>
-<style>
-/*あとでcssに追加する*/
-  .bottom_right{
-  position:fixed;
-  right:30px;
-  bottom:30px;
-  width: 80px;
-  height: 70px;
-  z-index: 20;
-  transform: scale(0.7); /*新規作成ボタン大きさ変更*/
-  }
-  .bottom_right span{
-    position:absolute;
-    z-index: 2;
-    display: inline-block;
-    left: 25%;
-    height: 3px;
-    border-radius: 2px;
-    background-color: #666;
-    width: 50%;
-    top: 50%;
-  }
-  .bottom_right span:nth-of-type(1) {
-  transform: rotate(90deg);
-  }
-
-
-  .block-baloon-right {
-	display: table;
-  width: 80px;
-  height: 70px;
-	position: relative;
-	background-color: #f2f2f2;/* 背景色 */
-	border: 2px solid #666;/* 枠線太さ、色 */
-  border-radius: 50px;
-}
-
-.block-baloon-right:before, .block-baloon-right:after	{
-  content: '';
-	position: absolute;
-  right: -2px;/* 枠線太さ */
-  bottom: -2px;
-  border-right: 40px solid transparent;
-  border-bottom: 40px solid #666;
-  z-index: -1;
-}
-.block-baloon-right:after	{
-	right: 3px;/* 枠線太さ */
-  bottom: 0;
-  border-right: 30px solid transparent;
-  border-bottom: 30px solid #f2f2f2;
-  z-index: 1;
-
-}
-i {
-  font-size: 24px;
-  color: aquamarine;
-}
-.name_form_hidden {
-  display: none;
-}
-</style>
 
 
 
-<div class="openbtn"><span></span><span></span><span></span></div>
+
+<div class="openbtn"><span></span><span></span><span>
+  <div id="photo-container">
+    <img id="photo" src="f_f_business_71_s512_f_business_71_0.png">
+  </div>
+</span></div>
 <nav id="g-nav">
 <div id="g-nav-list"><!--ナビの数が増えた場合縦スクロールするためのdiv※不要なら削除-->
 <ul>
@@ -131,9 +74,6 @@ i {
               <input type="button" onclick="edit()" value="&#xf304;" class="fas fa-pen name_edit_on">
         </form>
         <div id="user-info">
-          <div id="photo-container">
-            <img id="photo">
-          </div>
           <div id="name"></div>
           <div id="email"></div>
           <div id="uid" class="uid"></div>
@@ -164,9 +104,10 @@ i {
 <div class="main">
     <div class="left_box">
       <div class="right_box moveleft">
-        <p>左側に移動</p>
-        <input type="text" id="search_box1" placeholder="キーワード検索">
-        <input type="button" onclick="submit_search(1)" value="検索">
+        <div class="search_form">
+          <input type="text" id="search_box1" placeholder="キーワード検索">
+          <input type="button" onclick="submit_search(1)" value="&#xf002;" class="fas fa-search">
+        </div>
         <div class="search_tag">
           <a href="./index.html?id=Python">Python</a>
           <a href="./index.html?id=Java">Java</a>
@@ -201,16 +142,16 @@ i {
                         <form
                             action="https://script.google.com/macros/s/AKfycbzWQ6ojGAvYrhWerWDPCO11Y_3VGqD_EYcSSyX5ZV7KIanzi-TXOHKsXUHsSBN5mgdiXw/exec"
                             method="POST" target="sendPhoto" id="form" name="AnswerForm">
-                            <div class="form-group modal-body">
+                            <div class="form-group modal-body" style="display: none;">
                                 <label>フォームの種類<input name="form" value="answer"></label>
                             </div>
-                            <div class="form-group modal-body">
+                            <div class="form-group modal-body" style="display: none;">
                                 <label>uid<input name="form_uid" value="none" class="uid"></label>
                             </div>
-                            <div class="form-group modal-body">
+                            <div class="form-group modal-body" style="display: none;">
                                 <label>Qid<input name="form_Qid" class="form-Qid" value="none"></label>
                             </div>
-                            <div class="form-group modal-body">
+                            <div class="form-group modal-body" style="display: none;">
                                 <label>Aid<input name="form_Aid" class="form-Aid"></label>
                             </div>
                             <div class="form_group modal-body">
@@ -236,16 +177,16 @@ i {
                         <form
                             action="https://script.google.com/macros/s/AKfycbzWQ6ojGAvYrhWerWDPCO11Y_3VGqD_EYcSSyX5ZV7KIanzi-TXOHKsXUHsSBN5mgdiXw/exec"
                             method="POST" target="sendPhoto" id="pointform" name="AnswerForm">
-                            <div class="form-group modal-body">
+                            <div class="form-group modal-body" style="display: none;">
                                 <label>フォームの種類<input name="form" value="point"></label>
                             </div>
-                            <div class="form-group modal-body">
+                            <div class="form-group modal-body" style="display: none;">
                                 <label>uid<input name="form_uid" value="none" class="uid"></label>
                             </div>
-                            <div class="form-group modal-body">
+                            <div class="form-group modal-body" style="display: none;">
                                 <label>Qid<input name="form_Qid" class="form-Qid" value="none"></label>
                             </div>
-                            <div class="form-group modal-body">
+                            <div class="form-group modal-body" style="display: none;">
                                 <label>Aid<input name="form_Aid" class="form-Aid"></label>
                             </div>
                             <div class="form-group modal-body">
@@ -278,13 +219,13 @@ i {
                   <form
                       action="https://script.google.com/macros/s/AKfycbzWQ6ojGAvYrhWerWDPCO11Y_3VGqD_EYcSSyX5ZV7KIanzi-TXOHKsXUHsSBN5mgdiXw/exec"
                       method="POST" target="sendPhoto" id="Qform" name="AnswerForm">
-                      <div class="form-group modal-body">
+                      <div class="form-group modal-body" style="display: none;">
                           <label>フォームの種類<input name="form" value="question"></label>
                       </div>
-                      <div class="form-group modal-body">
+                      <div class="form-group modal-body" style="display: none;">
                           <label>uid<input name="uid" value="none" class="uid"></label>
                       </div>
-                      <div class="form-group modal-body">
+                      <div class="form-group modal-body" style="display: none;">
                           <label>Qid<input name="qid"></label>
                       </div>
                       <div class="form-group modal-body">
@@ -303,11 +244,13 @@ i {
               </div>
           </div>
       </div>
-        <div class="item_box" style="min-height: 200px;"></div>
+        <div class="item_box" style="min-height: 200px;">お知らせ</div>
     </div>
     <div class="right_box moveright">
-      <input type="text" id="search_box2" placeholder="キーワード検索">
-      <input type="button" onclick="submit_search(2)" value="検索">
+      <div class="search_form">
+        <input type="text" id="search_box2" placeholder="キーワード検索">
+        <input type="button" onclick="submit_search(2)" value="&#xf002;" class="fas fa-search">
+      </div>
       <div class="search_tag">
         <a href="./index.html?id=Python">Python</a>
         <a href="./index.html?id=Java">Java</a>
@@ -365,8 +308,6 @@ i {
                     var LIKEList = data[3];
                     let likehtmltext = "";
                     let pointhtmltext = "";
-                    var USER_info = UserList.find(value => value.uid === GlobalUid);
-                    document.getElementById("form-name").value = USER_info.name;
                     var resultPointRank = UserList.filter(value => value.point !== '');
                     var resultLikeQRank = QList.filter(value => value.like_sum !== '');
 
@@ -403,10 +344,10 @@ i {
                     else{
                       htmltext += '<p>新規質問一覧</p>';
 
-                      for (let i = 0; i < resultQ.length; i++){
-                          htmltext += '<a href="./detail.html?id='+resultQ[i].qid+'">'+resultQ[i].title+'</a>';
+                      for (let i=resultQ.length-1; i>=0; i--){//let i = 0; i < resultQ.length; i++
+                          htmltext += '<div class="contents"><a href="./detail.html?id='+resultQ[i].qid+'">'+resultQ[i].title+'</a>';
                           htmltext += '<p>'+resultQ[i].text+'</p>';
-                          htmltext += '<div class="heart_box"><div class="heart_on '+resultQ[i].qid+'"></div><p class="heart_num">'+(0+Number(resultQ[i].like_sum))+'</p></div>';
+                          htmltext += '<div class="heart_box"><div class="far fa-heart heart '+resultQ[i].qid+'"></div><p class="heart_num">'+(0+Number(resultQ[i].like_sum))+'</p></div></div>';
                           
                       }
                     }
@@ -417,10 +358,10 @@ i {
                     else{
                       htmltextA += '<p>回答一覧</p>';
 
-                      for (let i = 0; i < resultA.length; i++){
-                          htmltextA += '<a href="./detail.html?id='+resultA[i].qid+'">'+QList[(resultA[i].qid-1)].title+'</a>';
+                      for (let i=resultA.length-1; i>=0; i--){//let i = 0; i < resultA.length; i++
+                          htmltextA += '<div class="contents"><a href="./detail.html?id='+resultA[i].qid+'">'+QList[(resultA[i].qid-1)].title+'</a>';
                           htmltextA += '<p>'+resultA[i].text+'</p>';
-                          htmltextA += '<div class="heart_box"><div class="heart_on '+resultA[i].qid+'"></div><p class="heart_num">'+(0+Number(resultA[i].like_sum))+'</p></div>';
+                          htmltextA += '<div class="heart_box"><div class="far fa-heart heart '+resultA[i].qid+'"></div><p class="heart_num">'+(0+Number(resultA[i].like_sum))+'</p></div></div>';
                           
                       }
                     }
@@ -430,6 +371,20 @@ i {
                     //quill.clipboard.dangerouslyPasteHTML(resultA[2].text);//現在は仮でテキストを指定している
                     //document.getElementById("editor").innerHTML = resultA[2].text;
         
+                    if(GlobalUid==undefined){
+                      console.log("ログインしてください");
+                      var login_target_off = document.getElementsByClassName('btn-primary');
+                      for (var i = 0; i < login_target_off.length; i++){
+                        login_target_off[i].style.display = "none";
+                      }
+                      
+                    }
+                    else{
+                      var USER_info = UserList.find(value => value.uid === GlobalUid);
+                      document.getElementById("form-name").value = USER_info.name;
+                      var login_rightbottom_off = document.getElementsByClassName('bottom_right');
+                      login_rightbottom_off[0].style.display = "block";
+                    }
                 });
         }
         
