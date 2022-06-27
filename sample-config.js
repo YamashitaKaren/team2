@@ -12,18 +12,18 @@
  * limitations under the License.
  */
 
-var config = {
-    apiKey: "AIzaSyCJVJ8N1QZe6rmnczBDTLe7jI_6mmFGuCk",
-    authDomain: "login-test-b09e3.firebaseapp.com",
-    projectId: "login-test-b09e3",
-    storageBucket: "login-test-b09e3.appspot.com",
-    messagingSenderId: "179784899863",
-    appId: "1:179784899863:web:c2116ddaef6bfc7c89ab52"
-  };
-  firebase.initializeApp(config);
-  
+  var config = {
+      apiKey: "AIzaSyCJVJ8N1QZe6rmnczBDTLe7jI_6mmFGuCk",
+      authDomain: "login-test-b09e3.firebaseapp.com",
+      projectId: "login-test-b09e3",
+      storageBucket: "login-test-b09e3.appspot.com",
+      messagingSenderId: "179784899863",
+      appId: "1:179784899863:web:c2116ddaef6bfc7c89ab52",
+      measurementId: "G-05J8LDGK7P"
+    };
+    firebase.initializeApp(config);
+    firebase.analytics().logEvent('notification_received');
   
   // Google OAuth Client ID, needed to support One-tap sign-up.
   // Set to null if One-tap sign-up is not supported.
-  var CLIENT_ID =
-      '179784899863-7q8raoop3bideoubmmsnr40ie4ctldll.apps.googleusercontent.com';
+  var CLIENT_ID ='179784899863-7q8raoop3bideoubmmsnr40ie4ctldll.apps.googleusercontent.com';
